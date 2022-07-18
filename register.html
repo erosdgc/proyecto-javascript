@@ -13,7 +13,7 @@
     <!-- Google Fonts Roboto -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"/>
     <link rel="stylesheet" href="styles.css">
-    <title>STAR01 Recordings - Register</title>
+    <title>STAR01 Recordings - Login</title>
 </head>
 
 <body class="bg">
@@ -58,21 +58,110 @@
 
 
 <!-------------------------------------->
-<!-------------- Register -------------->
+<!--------------- Log in --------------->
 <!-------------------------------------->
 
-<div id="register" class="card register bg-transparent bg-blur container flex">
+<div class="loginForm card bg-transparent bg-blur container flex">
     <div class="card-body p-md-3">
         <div class="row justify-content-center">
-            
-            <h1 class="samsung-font-cr text-center">Sign Up</h1>
-
-            <div class="col-md-10 col-lg-12 col-xl-12 order-2 order-lg-1 mt-5">
-                <form class="mx-1 mx-md-4" id="formulario" action="action_page.php">
+            <form class="form mx-1 mx-md-4" id="login" action="action_page.php">
+                <h1 class="form__title samsung-font-cr text-center mt-3">Login</h1>
+                <div class="col-md-10 col-lg-12 col-xl-12 order-2 order-lg-1 mt-5">
+                    <div class="form__message form__message--error mb-3"></div>
                     <div class="d-flex flex-row align-items-center mb-4">
                         <i class="color0 fas fa-user fa-lg me-3 fa-fw"></i>
+                        <div class="form__input-group form-outline flex-fill mb-0">
+                            <input type="name" class="form__input form-control" autofocus placeholder="Username or email" required/>
+                            <div class="form__input-error-message"></div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="color0 fas fa-lock fa-lg me-3 fa-fw"></i>
+                        <div class="form__input-group form-outline flex-fill mb-0">
+                            <input type="password" class="form__input form-control" autofocus placeholder="Password" required/>
+                            <div class="form__input-error-message"></div>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center mb-3 mb-lg-4">
+                        <input type="submit" value="Continue">
+                    </div>
+                    <div class="d-flex justify-content-center">
+                    <p class="form__text samsung-font-lc">Forgot your password? <a href="#" class="form__link">Retrieve password</a>
+                    </p>
+                    </div>
+                    <div class="d-flex justify-content-center mb-3"><
+                    <p class="form__text samsung-font-lc">
+                        Don't have an account? <a id="linkCreateAccount" class="form__link" href="./"> Create account</a>
+                    </p>
+                    </div>
+                </div>
+            </form>
+
+<!--Registro:-->
+
+            <form class="form form--hidden mx-1 mx-md-4" id="createAccount" action="action_page.php">
+                <h1 class="form__title samsung-font-cr text-center mt-3">Create Account</h1>
+                <div class="col-md-10 col-lg-12 col-xl-12 order-2 order-lg-1 mt-5">
+                    <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="color0 fas fa-user fa-lg me-3 fa-fw"></i>
+                        <div class="form__message form__message--error"></div>
+                        <div class="form__input-group form-outline flex-fill mb-0">
+                            <input type="name" id="signupUsername" class="form__input form-control" autofocus placeholder="Username" required/>
+                            <div class="form__input-error-message"></div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="color0 fas fa-envelope fa-lg me-3 fa-fw"></i>
                         <div class="form-outline flex-fill mb-0">
-                            <input type="name" id="inputName" class="form-control" placeholder="Your Name" required/>
+                            <input type="email" id="inputEmail" class="form-control" autofocus placeholder="Your Email Address" required/>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="color0 fas fa-lock fa-lg me-3 fa-fw"></i>
+                        <div class="form__input-group form-outline flex-fill mb-0">
+                            <input type="password" id="inputPassword" autofocus class="form__input form-control" placeholder="Password" required/>
+                            <div class="form__input-error-message"></div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="color0 fas fa-key fa-lg me-3 fa-fw"></i>
+                        <div class="form__input-group form-outline flex-fill mb-0">
+                            <input type="password" id="inputPasswordRepeat" autofocus class="form__input form-control" placeholder="Repeat your password" required/>
+                            <div class="form__input-error-message"></div>
+                        </div>
+                    </div>
+                    <p class="form__text samsung-font-lc"> Already have an account? <a id="linkLogin" class="form__link" href="#"> Sign in</a></p>
+                    <div class="form-check d-flex justify-content-center mb-5">
+                        <input class="form-check-input me-2" type="checkbox" value="" id="checkTerms" required/>
+                        <label class="color0 form-check-label samsung-font-lc" for="terms">I agree all statements in
+                            <a class="color0" href="terms.html">Terms of Service</a>
+                        </label>
+                    </div>
+                    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                        <input type="submit" value="Continue">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-------------------------------------->
+<!-------------- Register -------------->
+<!-------------------------------------->
+<!--
+<div id="register" class="form--hidden card register bg-transparent bg-blur container flex">
+    <div class="card-body p-md-3">
+        <div class="row justify-content-center">
+            <form class="form mx-1 mx-md-4" id="formulario" action="action_page.php">
+            <h1 class="samsung-font-cr text-center">Sign Up</h1>
+                <div class="col-md-10 col-lg-12 col-xl-12 order-2 order-lg-1 mt-5">
+                    <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="color0 fas fa-user fa-lg me-3 fa-fw"></i>
+                        <div class="form__message form__message--error">Incorrect username/password combination. Please check.</div>
+                        <div class="form__input-group form-outline flex-fill mb-0">
+                            <input type="name" id="userName" class="form__input form-control" placeholder="Username or email" required/>
+                            <div class="form__input-error-message">This is an error message.</div>
                         </div>
                     </div>
 
@@ -85,35 +174,42 @@
 
                     <div class="d-flex flex-row align-items-center mb-4">
                         <i class="color0 fas fa-lock fa-lg me-3 fa-fw"></i>
-                        <div class="form-outline flex-fill mb-0">
-                            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required/>
+                        <div class="form__input-group form-outline flex-fill mb-0">
+                            <input type="password" id="inputPassword" class="form__input form-control" placeholder="Password" required/>
+                            <div class="form__input-error-message">Error</div>
                         </div>
                     </div>
 
                     <div class="d-flex flex-row align-items-center mb-4">
                         <i class="color0 fas fa-key fa-lg me-3 fa-fw"></i>
-                        <div class="form-outline flex-fill mb-0">
-                            <input type="password" id="inputPasswordRepeat" class="form-control" placeholder="Repeat your password" required/>
+                        <div class="form__input-group form-outline flex-fill mb-0">
+                            <input type="password" id="inputPasswordRepeat" class="form__input form-control" placeholder="Repeat your password" required/>
+                            <div class="form__input-error-message">Error</div>
                         </div>
                     </div>
+
+                    <p class="form__text">
+                        Already have an account? <a id="linkLogin" class="form__link" href="#"> Sign in</a>
+                    </p>
 
                     <div class="form-check d-flex justify-content-center mb-5">
                         <input class="form-check-input me-2" type="checkbox" value="" id="checkTerms" required/>
                         <label class="color0 form-check-label" for="terms">I agree all statements in
-                            <a class="color0" href="#!">Terms of Service</a>
+                            <a class="color0" href="terms.html">Terms of Service</a>
                         </label>
                     </div>
 
+                    
                     <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                        <input type="submit" value="Submit">
+                        <input type="submit" value="Continue">
                     </div>
-                </form>
-            </div>
+                </div>
+            </form>
         </div>
     </div>
 </div>
 
-
+-->
 <!----------------------------------->
 <!------------- FOOTER -------------->
 <!----------------------------------->
@@ -123,7 +219,7 @@
     <div class="footer_navbar">
         <ul class="flex justify-content-center">
         <li><a class="nav-item footer_link samsung-font-cr" href="index.html">About</a></li>
-        <li><a class="nav-item footer_link samsung-font-cr" href="register.html">Register</a></li>
+        <li><a class="nav-item footer_link samsung-font-cr" href="register.html">Login</a></li>
         <li><a class="nav-item footer_link samsung-font-cr" href="contact.html">Contact Us</a></li>
         <li><a class="nav-item footer_link samsung-font-cr" href="">Data Policy</a></li>
         </ul>
