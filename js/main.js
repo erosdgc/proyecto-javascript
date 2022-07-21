@@ -18,12 +18,12 @@ let M4A = {formato: "con pérdidas", tipo: "comprimido", precio: 1.5}
 elegirTrack()
 
 const tracksInfo = [
-    { id: 1, artista: "Eros David", nombre: "Wandering Souls", genero: "Melodic House & Techno", anio: 2020},
-    { id: 2, artista: "Eros David", nombre: "Pillars of Creation", genero: "Melodic House & Techno", anio: 2022},
-    { id: 3, artista: "Eros David", nombre: "Visionaries", genero: "Organic House / Downtempo", anio: 2022},
-    { id: 4, artista: "Eros David", nombre: "The Adventurer", genero: "Progressive House", anio: 2022},
-    { id: 5, artista: "Eros David", nombre: "Kalpa", genero: "Progressive House", anio: 2022},
-    { id: 6, artista: "Eros David", nombre: "Out of Alignment", genero: "Melodic House & Techno", anio: 2021}
+    { id: 1, artista: "Eros David", nombre: "Wandering Souls", genero: "Melodic House & Techno", fecha: 2020},
+    { id: 2, artista: "Eros David", nombre: "Pillars of Creation", genero: "Melodic House & Techno", fecha: 2022},
+    { id: 3, artista: "Eros David", nombre: "Visionaries", genero: "Organic House / Downtempo", fecha: 2022},
+    { id: 4, artista: "Eros David", nombre: "The Adventurer", genero: "Progressive House", fecha: 2022},
+    { id: 5, artista: "Eros David", nombre: "Kalpa", genero: "Progressive House", fecha: 2022},
+    { id: 6, artista: "Eros David", nombre: "Out of Alignment", genero: "Melodic House & Techno", fecha: 2021}
 ];
 
 class Formato {
@@ -121,7 +121,9 @@ function elegirCalidad(){
 // elegirCalidad()
 
 // Carrito
-const carrito = []
+const carrito = JSON.parse(localStorage.getItem('carrito')) ||
+[]
+carrito.length === 0 && console.log("¡Carrito vacío!")
 
 // Carrito completo
 function carritoCompleto(){
@@ -181,7 +183,7 @@ const listaTracks = [
         nombre: "Wandering Souls",
         artista: "Eros David",
         genero: "Melodic House & Techno",
-        anio: 2020,
+        fecha: 2020,
 //      calidad: segun eleccion
 //      precio: como poner que sea variable segun la calidad?
     },
@@ -190,35 +192,35 @@ const listaTracks = [
         nombre: "Pillars of Creation",
         artista: "Eros David",
         genero: "Melodic House & Techno",
-        anio: 2022,
+        fecha: 2022,
     },
     {
         id: 3,
         nombre: "Visionaries",
         artista: "Eros David",
         genero: "Organic House / Downtempo",
-        anio: 2022,
+        fecha: 2022,
     },
     {
         id: 4,
         nombre: "The Adventurer",
         artista: "Eros David",
         genero: "Progressive House",
-        anio: 2022,
+        fecha: 2022,
     },
     {
         id: 5,
         nombre: "Kalpa",
         artista: "Eros David",
         genero: "Progressive House",
-        anio: 2022,
+        fecha: 2022,
     },
     {
         id: 6,
         nombre: "Out of Alignment",
         artista: "Eros David",
         genero: "Melodic House & Techno",
-        anio: 2022,
+        fecha: 2022,
     },
 ];
 
@@ -247,7 +249,7 @@ console.log(trackGenre[3].innerHTML);
 console.log(trackGenre[4].innerHTML);
 console.log(trackGenre[5].innerHTML);
 
-let plantilla = `Release N°: ${tracksInfo.id} - Nombre: ${tracksInfo.nombre} - Genero: ${tracksInfo.genero} - Año: ${tracksInfo.anio}`;
+let plantilla = `Release N°: ${tracksInfo.id} - Nombre: ${tracksInfo.nombre} - Genero: ${tracksInfo.genero} - Año: ${tracksInfo.fecha}`;
 
 console.log(plantilla)
 

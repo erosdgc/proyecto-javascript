@@ -47,8 +47,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.querySelectorAll(".form__input").forEach(inputElement => {
         inputElement.addEventListener("blur", e => {
-            if (e.target.id === "signupUsername" && e.target.value.length > 0 && e.target.value.length < 10) {
-                setInputError(inputElement, "Username must be at least 10 characters in length");
+            if (e.target.id === "signupUsername" && e.target.value.length > 0 && e.target.value.length < 5) {
+                setInputError(inputElement, "Username must be at least 5 characters in length");
             }
         });
 
@@ -113,4 +113,6 @@ function validarFormulario (event) {
     console.log(inputContrasenia.value)
     console.log(inputRepetirContrasenia.value)
 
-    alert("Registro exitoso!")};
+    alert(registro && "Registro exitoso!")};
+
+const registro = JSON.parse (localStorage.getItem('registro')) || [];
