@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
     loginForm.addEventListener("submit", e => {
         e.preventDefault();
 
-        
+
 // AJAX / Fetch (login)
 
         setFormMessage(loginForm, "Error", "Invalid username/password combination");
@@ -57,13 +57,11 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
-
+/*
 function registrarUsuario() {
     registros.forEach((registro) => {
         let agregarRegistro = document.createElement();
-        agregarRegistro.innerHTML = `
-        
-        `
+        agregarRegistro.innerHTML = ``
 
     });
 }
@@ -116,3 +114,63 @@ function validarFormulario (event) {
     alert(registro && "Registro exitoso!")};
 
 const registro = JSON.parse (localStorage.getItem('registro')) || [];
+*/
+
+// LIBRERÍAS
+    // SWEET ALERT
+/*
+const btnMostrarAlert = document.getElementById("btn-registro");
+btnMostrarAlert.onclick = mostrarAlert
+
+    function mostrarAlert() {
+        Swal.fire({
+            icon: 'success',
+            title: 'Welcome!',
+            text: 'Your account has been saved correctly.',
+          })
+    }
+*/
+
+const btnMostrarAlertLogin = document.getElementById("btn-login");
+    btnMostrarAlertLogin.onclick = mostrarAlertLogin()
+    
+        function mostrarAlertLogin() {
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 5000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                  toast.addEventListener('mouseenter', Swal.stopTimer)
+                  toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+              })
+              
+              Toast.fire({
+                icon: 'success',
+                title: 'Loged in successfully'
+              })
+        }
+
+
+const btnMostrarAlertRegistro = document.getElementById("btn-registro");
+    btnMostrarAlertRegistro.onclick = mostrarAlertRegistro()
+    
+    function mostrarAlertRegistro() {
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 5000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+            Toast.fire({
+            icon: 'success',
+            title: 'Successfull Register'
+            })
+    };

@@ -14,7 +14,7 @@ let FLAC = {formato: "sin pérdidas", tipo: "sin compresión", precio: 2.5}
 let MP3 = {formato: "con pérdidas", tipo: "comprimido", precio: 2}
 let M4A = {formato: "con pérdidas", tipo: "comprimido", precio: 1.5}
 */
-
+/*
 elegirTrack()
 
 const tracksInfo = [
@@ -50,7 +50,7 @@ for (const compra of formatos) {
     console.log(compra.precio);
 }
 */
-
+/*
 function elegirTrack(){
     let opcionTrack = prompt('¿Qué pista desea descargar? \n Escribe 1 para descargar "Wandering Souls" de Eros David \n Escribe 2 para descargar "Pillars of Creation" de Eros David \n Escribe 3 para descargar "Visionaries" de Eros David \n Escribe 4 para descargar "The Adventurer" de Eros David \n Escribe 5 para descargar "Kalpa" de Eros David \n Escribe 6 para descargar "Out of Alignment" de Eros David \n 0 si desea cancelar la compra.')
     if (opcionTrack == 1 || opcionTrack == '1') {
@@ -153,6 +153,7 @@ function sumarTrack(){
 /* Pago
 let metodosPago = ["TRANSFERENCIA", "CREDITO"]
 */
+/*
 function pay() {
     let payment = prompt("Seleccione un método de pago:\nEscriba 1 para pagar con transferencia (10% de descuento)\nEscriba 2 para pagar con tarjeta de crédito (monto variable).\n0 para ir al menú anterior.")
     if(payment == 1 || payment == '1') {
@@ -252,53 +253,10 @@ console.log(trackGenre[5].innerHTML);
 let plantilla = `Release N°: ${tracksInfo.id} - Nombre: ${tracksInfo.nombre} - Genero: ${tracksInfo.genero} - Año: ${tracksInfo.fecha}`;
 
 console.log(plantilla)
-
-
-/*
-// Calcular ahora el precio total de la compra. Previamente hacer un carrito con la suma de todos.
-for (const precioTotal of elegirFormato) {
-    console.log(precioTotal.id);
-    console.log(precioTotal.precio);
-}
-
-class copiaDigital {
-    constructor(artista, nombre, precio, formato) {
-        this.artista = artista.toUpperCase()
-        this.nombre = nombre
-        this.precio = precio
-        this.cantidad = cantidad
-    }
-}
-
-function copiasAgregadas(){
-    let numeroCopias = parseInt(prompt("¿Qué copias vas a llevar?"))
-    let copias = []
-    console.log(copias)
-    return copias
-    }
-
-function mostrarCopias(copias){
-    for(const copiaDigital of copias){
-        console.log(copiaDigital)
-        console.log(copiaDigital.nombre)
-    }
-}
-
-function calcularCosto(copias){
-    let sumatoriaCosto = 0;
-    for (const copiaDigital of copias) {
-        sumatoriaCosto = copiaDigital.calcularCosto();
-    }
-    return sumatoriaCosto
-}
-
-function main(){
-    let copias = agregarCopia()
-    mostrarCopias(copias)
-    alert("El costo total de las copias es: " + calcularCosto(copias))
-}
-main();
 */
+
+
+
 
 
 
